@@ -1,7 +1,7 @@
 //Atha Maulidia, 244107060080, 03
 import java.util.Scanner;
 public class UASIC03 {
-    static int jmlData03 = (3 % 3) + 4;
+    static int jmlData03 = (80 % 3) + 4;
     static String[] dataNamaTim03 = new String[jmlData03];
     static int[][] skorTim03 = new int[jmlData03][2];
     static Scanner sc = new Scanner(System.in);
