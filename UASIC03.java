@@ -42,7 +42,7 @@ public class UASIC03 {
             dataNamaTim03[i] = sc.nextLine();
             int skorLevel103;
             do {
-                System.out.print("Masukkan skor " + dataNamaTim03[i] + "untuk Level 1"+ ": ");
+                System.out.print("Masukkan skor " + dataNamaTim03[i] + " untuk Level 1"+ ": ");
                 skorLevel103 = sc.nextInt();
                 if (skorLevel103 < 0) {
                     System.out.println("Skor harus bilangan positif atau nol. Coba lagi.");
