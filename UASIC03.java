@@ -1,12 +1,10 @@
 //Atha Maulidia, 244107060080, 03
 import java.util.Scanner;
-
 public class UASIC03 {
-    static int jmlData03 = (80 % 3) + 4;
+    static int jmlData03 = (3 % 3) + 4;
     static String[] dataNamaTim03 = new String[jmlData03];
     static int[][] skorTim03 = new int[jmlData03][2];
     static Scanner sc = new Scanner(System.in);
-
     public static void main(String[] args) {
         int pilihan03;
         do {
@@ -18,7 +16,7 @@ public class UASIC03 {
             System.out.print("Pilih menu (1-4): ");
             pilihan03 = sc.nextInt();
             sc.nextLine();
-
+            
             switch (pilihan03) {
                 case 1:
                     tambahDataSkorTim();
@@ -81,34 +79,30 @@ public class UASIC03 {
     }
 
     static void menentukanJuara() {
-        int maxScore03 = 0;
-        String juara03 = "juara ";
-        boolean seri03 = false;
+        int maxScore03 = -1; 
+        String juara03 = " "; 
+        boolean tandingberakhir03 = false; 
+    
         for (int i = 0; i < jmlData03; i++) {
-            int totalSkor03 = skorTim03[i][0] + skorTim03[i][1];
-            if (totalSkor03 % 2 == 0) {
-                totalSkor03 -= 15;
+            int totalScore03 = skorTim03[i][0] + skorTim03[i][1];
+            if (totalScore03 % 2 == 0) {
+                totalScore03 -= 15;
             }
-
-            if (totalSkor03 > maxScore03) {
-                maxScore03 = totalSkor03;
-                juara03 = dataNamaTim03[i];
-                seri03 = false;
-            } else if (totalSkor03 == maxScore03 && !juara03.islength()) {
-                if (skorTim03[i][1] > skorTim03[islength(juara03)][1]) {
-                    juara03 = dataNamaTim03[i];
-                    seri03 = false;
-                } else if (skorTim03[i][1] == skorTim03[islength(juara03)][1]) {
-                    seri03 = true;
-                }
+    
+            if (totalScore03 > maxScore03) {
+                maxScore03 = totalScore03; 
+                juara03 = dataNamaTim03[i]; 
+                tandingberakhir03 = false; 
+            } else if (totalScore03 == maxScore03) {
+                tandingberakhir03 = true; 
             }
         }
-
-        if (seri03) {
-            System.out.println("Turnamen berakhir dengan seri!");
+    
+        if (tandingberakhir03) {
+            System.out.println("Turnamen berakhir seri. Tim terbaik adalah Tim " + juara03); 
         } else {
             System.out.println("Selamat kepada Tim " + juara03 + " yang telah memenangkan kompetisi!");
         }
     }
-
+    
 }
